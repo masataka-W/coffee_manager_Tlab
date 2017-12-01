@@ -33,11 +33,12 @@ class selectDrink: UIViewController {
             drinkSelectButton.append(drink)
             // イベントを追加する
             drink.addTarget(self, action: #selector(selectDrink.drinkCoffee(sender:)), for: .touchUpInside)
+            
         }
         // 配列から取り出してViewに追加
         for drink in drinkSelectButton {
             view.addSubview(drink)
-            print("drink is \(drink)")
+            //print("drink is \(drink)")
         }
        
     }
@@ -49,15 +50,15 @@ class selectDrink: UIViewController {
         InitDrinkNum[self.delegate.user] = drinkNum.description
         defaults.set(InitMoney, forKey: "DataMoney")
         defaults.set(InitDrinkNum, forKey: "DataDrinkNum")
-
-        // NavigationControllerを使ったページの遷移
-        //let ViewController: ViewController = ViewController()
-        //self.navigationController?.pushViewController(ViewController, animated: true)
         
-        let mainView = storyboard!.instantiateViewController(withIdentifier: "main")
-        self.present(mainView,animated: true, completion: nil)
+        //let mainView = storyboard!.instantiateViewController(withIdentifier: "main")
+        //self.present(mainView,animated: true, completion: nil)
+
+        let goRoulette = storyboard!.instantiateViewController(withIdentifier: "roulette")
+        self.present(goRoulette,animated: true, completion: nil)
 
     }
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }

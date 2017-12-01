@@ -19,10 +19,9 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     var drinkBlack: [UIButton] = []//drink_black_coffee
     @IBOutlet weak var selectAddMoney: UIPickerView!//入金
     @IBOutlet weak var selectModifyMoney: UIPickerView!//修正
-    //@IBAction func goBack(_ segue:UIStoryboardSegue) {}
     
-    let userChoice: NSArray = ["本城","河村","福地","綿島","榎田","川端","倉重","森","矢野","山田"]
-    let moneyChoice: NSArray = ["0","20","50","100","200","300","400","500","1000"]
+    let userChoice: [String] = ["本城","河村","福地","綿島","榎田","川端","倉重","森","矢野","山田"]
+    let moneyChoice: [String] = ["0","20","50","100","200","300","400","500","1000"]
     var InitialDataMoney: [String] = ["0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0"]
     var InitialDataDrinkNum: [String] = ["0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0"]
     var uChoice:String = ""
@@ -48,6 +47,8 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
            InitMoney = defaults.array(forKey: "DataMoney") as! [String]
            InitDrinkNum = defaults.array(forKey: "DataDrinkNum") as! [String]
         }
+        
+        self.delegate.users = userChoice
         
         selectAddMoney.dataSource = self
         selectAddMoney.delegate = self
@@ -83,7 +84,6 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             total.textColor = UIColor.white
             total.textAlignment = NSTextAlignment.right
             total.text = InitMoney[i]
-//            total.text = defaults.array(InitialDataMoney[i],forKey: "DataDrinkNum") as! [String]
             total.tag = i
             totalMoney.append(total)
         }
@@ -120,7 +120,6 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             black.backgroundColor = UIColor.blue
             black.tag = k
             // イベントを追加する
-            //black.addTarget(self, action: #selector(ViewController.drinkBlackCoffee(sender:)), for: .touchUpInside)
             black.addTarget(self, action: #selector(ViewController.selectDrink(sender:)), for: .touchUpInside)
 
             drinkBlack.append(black)
@@ -133,15 +132,6 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         
     }
     
-//    @objc func drinkBlackCoffee(sender: UIButton) {
-//        Money = Int64(totalMoney[sender.tag].text!)! - self.delegate.price
-//        if Money <= 0 {
-//            Money = 0
-//        }
-//        drinkNum = Money/20
-//        totalMoney[sender.tag].text = Money.description
-//        drinkLeft[sender.tag].text = drinkNum.description
-//    }
     @objc func selectDrink(sender: UIButton) {
         var money = Int64(InitMoney[sender.tag])
         self.delegate.user = sender.tag
@@ -167,9 +157,9 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         if (component == 0){
-            return userChoice[row] as? String
+            return userChoice[row]
         }else if (component == 1){
-            return moneyChoice[row] as? String
+            return moneyChoice[row]
         }
         return "";
     }
@@ -179,7 +169,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             if (component == 0){
                 print("列: \(row)")
                 print("値: \(userChoice[row])")
-                uChoice = userChoice[row] as! String//誰が
+                uChoice = userChoice[row] //誰が
                 userRowNum = row
             }else if (component == 1){
                 print("列: \(row)")
@@ -190,7 +180,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             if (component == 0){
                 print("列: \(row)")
                 print("値: \(userChoice[row])")
-                uChoiceM = userChoice[row] as! String//誰が
+                uChoiceM = userChoice[row] //誰が
                 userRowNumM = row
             }else if (component == 1){
                 print("列: \(row)")

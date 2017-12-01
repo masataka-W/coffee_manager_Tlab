@@ -109,11 +109,11 @@
             </objects>
             <point key="canvasLocation" x="960.15625" y="141.796875"/>
         </scene>
-        <!--View Controller-->
+        <!--Roulette-->
         <scene sceneID="2R0-RA-A4f">
             <objects>
-                <viewController id="bre-HX-4jq" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="nQd-KK-VuA">
+                <viewController storyboardIdentifier="roulette" id="bre-HX-4jq" customClass="roulette" customModule="coffee_management" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nQd-KK-VuA" customClass="roulette">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -123,6 +123,38 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="on3-y5-HYA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1688" y="134"/>
+        </scene>
+        <!--Roulette2-->
+        <scene sceneID="296-Wq-r1o">
+            <objects>
+                <viewController storyboardIdentifier="roulette2" id="5OR-sO-giD" customClass="roulette2" customModule="coffee_management" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0kf-yX-4Cj" customClass="Roulette2">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c7A-8E-yoM" customClass="PieChartView" customModule="Charts">
+                                <rect key="frame" x="264" y="303" width="240" height="273"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="LtR-CI-7GS"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="c7A-8E-yoM" firstAttribute="centerX" secondItem="0kf-yX-4Cj" secondAttribute="centerX" id="Rxo-dc-If9"/>
+                            <constraint firstItem="c7A-8E-yoM" firstAttribute="top" secondItem="SsY-kF-dvB" secondAttribute="top" constant="283" id="hRI-Ir-uk3"/>
+                            <constraint firstItem="SsY-kF-dvB" firstAttribute="bottom" secondItem="c7A-8E-yoM" secondAttribute="bottom" constant="448" id="oPZ-xS-9sz"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="SsY-kF-dvB"/>
+                    </view>
+                    <connections>
+                        <outlet property="pieChartView" destination="c7A-8E-yoM" id="bLB-FK-iLJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BJH-jn-c0g" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2356.25" y="130.6640625"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Zgv-oI-RTo">

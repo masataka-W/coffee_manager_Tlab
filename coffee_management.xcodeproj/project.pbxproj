@@ -8,17 +8,36 @@
 
 /* Begin PBXBuildFile section */
 		4B0B61BB1FCCD25B0079A01D /* selectDrink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0B61BA1FCCD25B0079A01D /* selectDrink.swift */; };
+		4B0B61BD1FCFE0480079A01D /* roulette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0B61BC1FCFE0480079A01D /* roulette.swift */; };
 		4B21BCB51FC58659008FD19C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B21BCB41FC58659008FD19C /* AppDelegate.swift */; };
 		4B21BCB71FC58659008FD19C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B21BCB61FC58659008FD19C /* ViewController.swift */; };
 		4B21BCBA1FC58659008FD19C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B21BCB81FC58659008FD19C /* Main.storyboard */; };
 		4B21BCBC1FC58659008FD19C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B21BCBB1FC58659008FD19C /* Assets.xcassets */; };
 		4B21BCBF1FC58659008FD19C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B21BCBD1FC58659008FD19C /* LaunchScreen.storyboard */; };
-		8ECC61CAE0F76F392CFB1105 /* Pods_coffee_management.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 282CA159604FEF209325D08F /* Pods_coffee_management.framework */; };
+		4B55D3E91FD0271E0080EA8C /* roulette.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4B55D3E71FD0271D0080EA8C /* roulette.jpg */; };
+		4B55D3EA1FD0271E0080EA8C /* needle.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4B55D3E81FD0271E0080EA8C /* needle.jpg */; };
+		4B55D3EC1FD03AD50080EA8C /* PiewChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B55D3EB1FD03AD50080EA8C /* PiewChart.swift */; };
+		4B55D3EE1FD04F190080EA8C /* roulette2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B55D3ED1FD04F190080EA8C /* roulette2.swift */; };
+		4B55D3F11FD0B1080080EA8C /* Pods_coffee_management.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B55D3F21FD0B1080080EA8C /* Pods_coffee_management.framework */; };
+		4B55D3F71FD0B2600080EA8C /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B55D3F81FD0B2600080EA8C /* Charts.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		4B55D3F61FD0B11F0080EA8C /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		282CA159604FEF209325D08F /* Pods_coffee_management.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_coffee_management.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B0B61BA1FCCD25B0079A01D /* selectDrink.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = selectDrink.swift; sourceTree = "<group>"; };
+		4B0B61BC1FCFE0480079A01D /* roulette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = roulette.swift; sourceTree = "<group>"; };
 		4B21BCB11FC58659008FD19C /* coffee_management.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = coffee_management.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B21BCB41FC58659008FD19C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4B21BCB61FC58659008FD19C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -26,6 +45,12 @@
 		4B21BCBB1FC58659008FD19C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4B21BCBE1FC58659008FD19C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4B21BCC01FC58659008FD19C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4B55D3E71FD0271D0080EA8C /* roulette.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = roulette.jpg; path = "../../../Desktop/素材/roulette.jpg"; sourceTree = "<group>"; };
+		4B55D3E81FD0271E0080EA8C /* needle.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = needle.jpg; path = "../../../Desktop/素材/needle.jpg"; sourceTree = "<group>"; };
+		4B55D3EB1FD03AD50080EA8C /* PiewChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PiewChart.swift; sourceTree = "<group>"; };
+		4B55D3ED1FD04F190080EA8C /* roulette2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = roulette2.swift; sourceTree = "<group>"; };
+		4B55D3F21FD0B1080080EA8C /* Pods_coffee_management.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_coffee_management.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4B55D3F81FD0B2600080EA8C /* Charts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Charts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B510BE3A7698B0CCFA7A1A82 /* Pods-coffee_management.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-coffee_management.release.xcconfig"; path = "Pods/Target Support Files/Pods-coffee_management/Pods-coffee_management.release.xcconfig"; sourceTree = "<group>"; };
 		EC7DDB89F1F8F94A67344971 /* Pods-coffee_management.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-coffee_management.debug.xcconfig"; path = "Pods/Target Support Files/Pods-coffee_management/Pods-coffee_management.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -35,7 +60,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8ECC61CAE0F76F392CFB1105 /* Pods_coffee_management.framework in Frameworks */,
+				4B55D3F71FD0B2600080EA8C /* Charts.framework in Frameworks */,
+				4B55D3F11FD0B1080080EA8C /* Pods_coffee_management.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,7 +92,12 @@
 				4B21BCB41FC58659008FD19C /* AppDelegate.swift */,
 				4B21BCB61FC58659008FD19C /* ViewController.swift */,
 				4B0B61BA1FCCD25B0079A01D /* selectDrink.swift */,
+				4B0B61BC1FCFE0480079A01D /* roulette.swift */,
+				4B55D3EB1FD03AD50080EA8C /* PiewChart.swift */,
+				4B55D3ED1FD04F190080EA8C /* roulette2.swift */,
 				4B21BCB81FC58659008FD19C /* Main.storyboard */,
+				4B55D3E81FD0271E0080EA8C /* needle.jpg */,
+				4B55D3E71FD0271D0080EA8C /* roulette.jpg */,
 				4B21BCBB1FC58659008FD19C /* Assets.xcassets */,
 				4B21BCBD1FC58659008FD19C /* LaunchScreen.storyboard */,
 				4B21BCC01FC58659008FD19C /* Info.plist */,
@@ -86,7 +117,8 @@
 		CB738ACD8EC694CD28C37599 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				282CA159604FEF209325D08F /* Pods_coffee_management.framework */,
+				4B55D3F81FD0B2600080EA8C /* Charts.framework */,
+				4B55D3F21FD0B1080080EA8C /* Pods_coffee_management.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -104,6 +136,7 @@
 				4B21BCAF1FC58659008FD19C /* Resources */,
 				920949C53287E7A307E4DF2B /* [CP] Embed Pods Frameworks */,
 				3B47380D541B81384E9E453D /* [CP] Copy Pods Resources */,
+				4B55D3F61FD0B11F0080EA8C /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -154,8 +187,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				4B21BCBF1FC58659008FD19C /* LaunchScreen.storyboard in Resources */,
+				4B55D3EA1FD0271E0080EA8C /* needle.jpg in Resources */,
 				4B21BCBC1FC58659008FD19C /* Assets.xcassets in Resources */,
 				4B21BCBA1FC58659008FD19C /* Main.storyboard in Resources */,
+				4B55D3E91FD0271E0080EA8C /* roulette.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -184,11 +219,11 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-coffee_management/Pods-coffee_management-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Expression/Expression.framework",
+				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Expression.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -221,8 +256,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				4B0B61BB1FCCD25B0079A01D /* selectDrink.swift in Sources */,
+				4B0B61BD1FCFE0480079A01D /* roulette.swift in Sources */,
 				4B21BCB71FC58659008FD19C /* ViewController.swift in Sources */,
 				4B21BCB51FC58659008FD19C /* AppDelegate.swift in Sources */,
+				4B55D3EE1FD04F190080EA8C /* roulette2.swift in Sources */,
+				4B55D3EC1FD03AD50080EA8C /* PiewChart.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
