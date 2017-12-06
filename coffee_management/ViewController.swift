@@ -35,19 +35,29 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     var drinkNum:Int64 = 0//要変更
     var userRowNum = 0//userChoiceの何列目のuserを指定しているか
     var userRowNumM = 0//userChoiceの何列目のuserを指定しているかModify用
+    let dict2 = ["secondLaunch": true]//１回目の立ち上げでmoneyなどの値が更新されなかった時の対策
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        defaults.register(defaults: dict2)//１回目の立ち上げでmoneyなどの値が更新されなかった時の対策
+        
         if defaults.bool(forKey: "firstLanch") {
            defaults.register(defaults: ["InitialDataMoney":InitialDataMoney,"InitialDataDrinkNum":InitialDataDrinkNum])
            InitMoney = defaults.array(forKey: "InitialDataMoney") as! [String]
            InitDrinkNum = defaults.array(forKey: "InitialDataDrinkNum") as! [String]
            defaults.set(false, forKey: "firstLanch")
         } else {
-           InitMoney = defaults.array(forKey: "DataMoney") as! [String]
-           InitDrinkNum = defaults.array(forKey: "DataDrinkNum") as! [String]
+            if defaults.bool(forKey: "secondLaunch"){
+                defaults.register(defaults: ["InitialDataMoney":InitialDataMoney,"InitialDataDrinkNum":InitialDataDrinkNum])
+                InitMoney = defaults.array(forKey: "InitialDataMoney") as! [String]
+                InitDrinkNum = defaults.array(forKey: "InitialDataDrinkNum") as! [String]
+            } else {
+                InitMoney = defaults.array(forKey: "DataMoney") as! [String]
+                InitDrinkNum = defaults.array(forKey: "DataDrinkNum") as! [String]
+            }
         }
-        
+    
         self.delegate.users = userChoice
         
         selectAddMoney.dataSource = self
@@ -62,7 +72,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         for name in userChoice {
             // Labelを作成
             let user = UILabel()
-            user.frame = CGRect(x:10,y: 60 * CGFloat(index) + 130,width: 80,height: 30)
+            user.frame = CGRect(x:10,y: 80 * CGFloat(index) + 130,width: 80,height: 35)
             user.text = "\(name)"
             user.textAlignment = NSTextAlignment.center
             //user.backgroundColor = UIColor.blue
@@ -79,7 +89,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         for i in 0..<userChoice.count {
             // Labelを作成
             let total = UILabel()
-            total.frame = CGRect(x:110,y: 60 * CGFloat(i) + 130,width: 80,height: 30)
+            total.frame = CGRect(x:110,y: 80 * CGFloat(i) + 130,width: 80,height: 35)
             total.backgroundColor = UIColor.blue
             total.textColor = UIColor.white
             total.textAlignment = NSTextAlignment.right
@@ -97,7 +107,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         for j in 0..<userChoice.count {
             // Labelを作成
             let left = UILabel()
-            left.frame = CGRect(x:210,y: 60 * CGFloat(j) + 130,width: 80,height: 30)
+            left.frame = CGRect(x:210,y: 80 * CGFloat(j) + 130,width: 80,height: 35)
             left.backgroundColor = UIColor.blue
             left.textColor = UIColor.white
             left.textAlignment = NSTextAlignment.right
@@ -114,7 +124,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         for k in 0..<userChoice.count {
             // Labelを作成
             let black = UIButton(type: .custom)
-            black.frame = CGRect(x:310,y: 60 * CGFloat(k) + 130,width: 50,height: 30)
+            black.frame = CGRect(x:310,y: 80 * CGFloat(k) + 130,width: 50,height: 35)
             black.setTitleColor(UIColor.white, for: .normal)
             black.setTitle("drink", for: .normal)
             black.backgroundColor = UIColor.blue
@@ -136,7 +146,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         var money = Int64(InitMoney[sender.tag])
         self.delegate.user = sender.tag
         // 遷移するViewを定義する.
-        if  money! >= 20 {
+        if  money! >= 20 || InitDrinkNum[sender.tag] != "0" {
         let sDrink = storyboard!.instantiateViewController(withIdentifier: "selectDrink")
         self.present(sDrink,animated: true, completion: nil)
         }
@@ -199,26 +209,22 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     @IBAction func addMoney(_ sender: UIButton) {
         Money = Int64(totalMoney[userRowNum].text!)! + mChoice
-        drinkNum = Money/20
         totalMoney[userRowNum].text = Money.description
-        drinkLeft[userRowNum].text = drinkNum.description
         InitMoney[userRowNum] = Money.description
-        InitDrinkNum[userRowNum] = drinkNum.description
         defaults.set(InitMoney, forKey: "DataMoney")
         defaults.set(InitDrinkNum, forKey: "DataDrinkNum")
-        print(defaults.array(forKey: "DataMoney") as Any)
+        defaults.set(false, forKey: "secondLaunch")
     }
     
     @IBAction func modefyMoney(_ sender: UIButton) {
         Money = mChoiceM
-        drinkNum = Money/20
         totalMoney[userRowNumM].text = Money.description
-        drinkLeft[userRowNumM].text = drinkNum.description
         InitMoney[userRowNumM] = Money.description
-        InitDrinkNum[userRowNumM] = drinkNum.description
+        InitDrinkNum[userRowNumM] = "0"
         defaults.set(InitMoney, forKey: "DataMoney")
         defaults.set(InitDrinkNum, forKey: "DataDrinkNum")
-        print(defaults.array(forKey: "DataMoney") as Any)
+        defaults.set(false, forKey: "secondLaunch")
+        //print(defaults.array(forKey: "DataDrinkNum") as Any)
     }
  
 }
