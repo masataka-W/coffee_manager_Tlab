@@ -21,7 +21,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     @IBOutlet weak var selectModifyMoney: UIPickerView!//修正
     
     let userChoice: [String] = ["本城","河村","福地","綿島","榎田","川端","倉重","森","矢野","山田"]
-    let moneyChoice: [String] = ["0","20","50","100","200","300","400","500","1000"]
+    let moneyChoice: [String] = ["20","50","100","200","300","400","500","1000"]
     var InitialDataMoney: [String] = ["0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0"]
     var InitialDataDrinkNum: [String] = ["0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0"]
     var uChoice:String = ""

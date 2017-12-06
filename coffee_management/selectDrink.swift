@@ -44,6 +44,8 @@ class selectDrink: UIViewController {
        
     }
     @objc func drinkCoffee(sender: UIButton) {
+        
+        //let goRoulette = storyboard!.instantiateViewController(withIdentifier: "roulette")
         //飲んだコーヒーの種類に応じて合計入金額の値を変更するための料金の値を渡す
         let Money:Int64 = Int64(InitMoney[self.delegate.user])! - drinkPrice[sender.tag]
         InitMoney[self.delegate.user] = Money.description
