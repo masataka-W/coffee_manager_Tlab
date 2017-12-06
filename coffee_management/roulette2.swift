@@ -106,7 +106,7 @@ class roulette2: UIViewController {
         let goMain = storyboard!.instantiateViewController(withIdentifier: "main")
 
             // 当たりアニメーションの秒数を設定(8秒)
-            UIView.animate(withDuration: 8.0,animations: { () -> Void in
+            UIView.animate(withDuration: 7.0,animations: { () -> Void in
                 for _ in 0..<10 {
                     self.ImageView2.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi * 1))
                     self.ImageView2.transform = CGAffineTransform(rotationAngle: 0)

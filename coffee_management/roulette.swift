@@ -82,7 +82,7 @@ class roulette: UIViewController {
         let goRoulette2 = storyboard!.instantiateViewController(withIdentifier: "roulette2")
         
         //当たりが出るかどうかの演算
-        let chooseResult = Int(arc4random_uniform(1))//0~49までの整数をランダムで生成
+        let chooseResult = Int(arc4random_uniform(20))//0~49までの整数をランダムで生成
         if chooseResult == 0 {
             //勝者が誰かの演算
             let chooseWiner = Int(arc4random_uniform(UInt32(self.delegate.users.count)))//user配列の何番目かが得られる
@@ -96,7 +96,7 @@ class roulette: UIViewController {
             let angle:CGFloat = CGFloat(M_PI_2*1.9)
             
             // 当たりアニメーションの秒数を設定(8秒)
-            UIView.animate(withDuration: 8.0,animations: { () -> Void in
+            UIView.animate(withDuration: 7.0,animations: { () -> Void in
                 for _ in 0..<10 {
                     self.myImageView.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi * 1))
                     self.myImageView.transform = CGAffineTransform(rotationAngle: 0)
@@ -119,9 +119,10 @@ class roulette: UIViewController {
             //ハズレ演出----------------------------------------------------------------------------------
             let routateNum = Int(arc4random_uniform(12))
             let angle:CGFloat = CGFloat(30*routateNum)
+            let goMain = storyboard!.instantiateViewController(withIdentifier: "main")
             
             // アニメーションの秒数を設定(8秒)
-            UIView.animate(withDuration: 8.0,animations: { () -> Void in
+            UIView.animate(withDuration: 7.0,animations: { () -> Void in
                 for _ in 0..<10 {
                     self.myImageView.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi * 1))
                     self.myImageView.transform = CGAffineTransform(rotationAngle: 0)
@@ -131,9 +132,12 @@ class roulette: UIViewController {
             },
                            completion: { (Bool) -> Void in
                             self.result.text = "nobody wins"
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+                                // n秒後に実行したい処理
+                            self.present(goMain,animated: true, completion: nil)
+                            }
+                            
             })
-            //let goMain = storyboard!.instantiateViewController(withIdentifier: "ViewController")
-            //self.present(goMain,animated: true, completion: nil)
         }
         
     }
