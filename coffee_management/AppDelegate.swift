@@ -1,4 +1,3 @@
-
 //  AppDelegate.swift
 //  coffee_management
 //
@@ -15,7 +14,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     //var myNavigationController: UINavigationController?
     var price: Int64 = 0
     var user:Int = 0
-
+    var users:[String] = []//ルーレットを回す時に使う
+    var win:Int = 0//ルーレット2で使う
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         // Override point for customization after application launch.

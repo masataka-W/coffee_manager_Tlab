@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
-        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -52,8 +51,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="残飲数" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1jP-9b-Qk5">
-                                <rect key="frame" x="225" y="74" width="63" height="44"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Lucky +" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1jP-9b-Qk5">
+                                <rect key="frame" x="225" y="74" width="71" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -74,14 +73,7 @@
                         <barButtonItem title="Item" id="Zaz-dg-3hy"/>
                     </toolbarItems>
                     <navigationItem key="navigationItem" title="main" id="4tz-rb-o6J">
-                        <rightBarButtonItems>
-                            <barButtonItem id="HmZ-Q2-gQm"/>
-                            <barButtonItem title="drink select" id="U5k-dC-e7X">
-                                <connections>
-                                    <segue destination="Y9a-sP-iP1" kind="show" id="hFQ-aS-gWy"/>
-                                </connections>
-                            </barButtonItem>
-                        </rightBarButtonItems>
+                        <barButtonItem key="rightBarButtonItem" id="HmZ-Q2-gQm"/>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -93,7 +85,7 @@
             </objects>
             <point key="canvasLocation" x="302.34375" y="133.0078125"/>
         </scene>
-        <!--drink select-->
+        <!--Select Drink-->
         <scene sceneID="65A-As-rsb">
             <objects>
                 <viewController storyboardIdentifier="selectDrink" id="Y9a-sP-iP1" customClass="selectDrink" customModule="coffee_management" customModuleProvider="target" sceneMemberID="viewController">
@@ -103,17 +95,16 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="5BJ-3K-NIC"/>
                     </view>
-                    <navigationItem key="navigationItem" title="drink select" id="7k0-PN-Jgw"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PQF-Zz-dbu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="960.15625" y="141.796875"/>
         </scene>
-        <!--View Controller-->
+        <!--Roulette-->
         <scene sceneID="2R0-RA-A4f">
             <objects>
-                <viewController id="bre-HX-4jq" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="nQd-KK-VuA">
+                <viewController storyboardIdentifier="roulette" id="bre-HX-4jq" customClass="roulette" customModule="coffee_management" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nQd-KK-VuA" customClass="roulette">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -123,6 +114,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="on3-y5-HYA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1695" y="142"/>
+        </scene>
+        <!--Roulette2-->
+        <scene sceneID="296-Wq-r1o">
+            <objects>
+                <viewController storyboardIdentifier="roulette2" id="5OR-sO-giD" customClass="roulette2" customModule="coffee_management" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0kf-yX-4Cj" customClass="Roulette2">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="SsY-kF-dvB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BJH-jn-c0g" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2356.25" y="130.6640625"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Zgv-oI-RTo">
