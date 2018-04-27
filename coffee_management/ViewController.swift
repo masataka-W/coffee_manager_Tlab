@@ -20,8 +20,8 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     @IBOutlet weak var selectAddMoney: UIPickerView!//入金
     @IBOutlet weak var selectModifyMoney: UIPickerView!//修正
     
-    let userChoice: [String] = ["本城","河村","福地","綿島","榎田","川端","倉重","森","矢野","山田"]
-    let moneyChoice: [String] = ["20","50","100","200","300","400","500","1000"]
+    let userChoice: [String] = ["矢野","河村","福地","綿島","榎田","川端","倉重","山田","末永","田中","仲地","長村","深町"]
+    let moneyChoice: [String] = ["5","10","50","100","200","300","400","500","1000"]
     var InitialDataMoney: [String] = ["0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0"]
     var InitialDataDrinkNum: [String] = ["0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0"]
     var uChoice:String = ""
@@ -72,7 +72,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         for name in userChoice {
             // Labelを作成
             let user = UILabel()
-            user.frame = CGRect(x:10,y: 80 * CGFloat(index) + 130,width: 80,height: 35)
+            user.frame = CGRect(x:10,y: 60 * CGFloat(index) + 130,width: 80,height: 35)
             user.text = "\(name)"
             user.textAlignment = NSTextAlignment.center
             //user.backgroundColor = UIColor.blue
@@ -89,7 +89,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         for i in 0..<userChoice.count {
             // Labelを作成
             let total = UILabel()
-            total.frame = CGRect(x:110,y: 80 * CGFloat(i) + 130,width: 80,height: 35)
+            total.frame = CGRect(x:110,y: 60 * CGFloat(i) + 130,width: 80,height: 35)
             total.backgroundColor = UIColor.blue
             total.textColor = UIColor.white
             total.textAlignment = NSTextAlignment.right
@@ -107,7 +107,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         for j in 0..<userChoice.count {
             // Labelを作成
             let left = UILabel()
-            left.frame = CGRect(x:210,y: 80 * CGFloat(j) + 130,width: 80,height: 35)
+            left.frame = CGRect(x:210,y: 60 * CGFloat(j) + 130,width: 80,height: 35)
             left.backgroundColor = UIColor.blue
             left.textColor = UIColor.white
             left.textAlignment = NSTextAlignment.right
@@ -124,7 +124,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         for k in 0..<userChoice.count {
             // Labelを作成
             let black = UIButton(type: .custom)
-            black.frame = CGRect(x:310,y: 80 * CGFloat(k) + 130,width: 50,height: 35)
+            black.frame = CGRect(x:310,y: 60 * CGFloat(k) + 130,width: 50,height: 35)
             black.setTitleColor(UIColor.white, for: .normal)
             black.setTitle("drink", for: .normal)
             black.backgroundColor = UIColor.blue
