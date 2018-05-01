@@ -17,14 +17,16 @@ class roulette: UIViewController {
     let result = UILabel()
     private var myImageView: UIImageView!
     private var myImageView2: UIImageView!
-    var InitMoney: [String] = []
-    var InitDrinkNum: [String] = []
+    var InitMoney: [Int] = []
+    var InitDrinkNum: [Int] = []
+    var index:Int = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        InitMoney = defaults.array(forKey: "DataMoney") as! [String]
-        InitDrinkNum = defaults.array(forKey: "DataDrinkNum") as! [String]
+        index = self.delegate.user - 1
+        InitMoney = defaults.array(forKey: "possessionMoney") as! [Int]
+        InitDrinkNum = defaults.array(forKey: "freeDrinkNumber") as! [Int]
 
         // UIImageViewのサイズを設定する
         let iWidth: CGFloat = 400//ルーレット用
@@ -88,12 +90,12 @@ class roulette: UIViewController {
             let chooseWiner = Int(arc4random_uniform(UInt32(self.delegate.users.count)))//user配列の何番目かが得られる
             self.delegate.win = chooseWiner//勝った人の配列番号を受け渡す(roulette2で使う)
             //勝った人のフリードリンクを+1更新する
-            let lucky = Int64(InitDrinkNum[chooseWiner])! + 1
-            InitDrinkNum[chooseWiner] = lucky.description
-            defaults.set(InitDrinkNum, forKey: "DataDrinkNum")
+            let lucky = Int64(InitDrinkNum[chooseWiner]) + 1
+            InitDrinkNum[chooseWiner] = Int(lucky)
+            defaults.set(InitDrinkNum, forKey: "freeDrinkNumber")
             
             // radianで回転角度を指定
-            let angle:CGFloat = CGFloat(M_PI_2*1.9)
+            let angle:CGFloat = CGFloat(Double.pi/2*1.9)
             
             // 当たりアニメーションの秒数を設定(8秒)
             UIView.animate(withDuration: 7.0,animations: { () -> Void in

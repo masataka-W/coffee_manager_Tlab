@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4B0B61BB1FCCD25B0079A01D /* selectDrink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0B61BA1FCCD25B0079A01D /* selectDrink.swift */; };
+		4B0B61BB1FCCD25B0079A01D /* selectDrinkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0B61BA1FCCD25B0079A01D /* selectDrinkViewController.swift */; };
 		4B0B61BD1FCFE0480079A01D /* roulette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0B61BC1FCFE0480079A01D /* roulette.swift */; };
 		4B21BCB51FC58659008FD19C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B21BCB41FC58659008FD19C /* AppDelegate.swift */; };
 		4B21BCB71FC58659008FD19C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B21BCB61FC58659008FD19C /* ViewController.swift */; };
@@ -20,6 +20,10 @@
 		4B55D3F71FD0B2600080EA8C /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B55D3F81FD0B2600080EA8C /* Charts.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		4BFD259D1FD6C2B00068F99E /* roulette2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BFD259B1FD6C2B00068F99E /* roulette2.png */; };
 		4BFD259E1FD6C2B00068F99E /* needle2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BFD259C1FD6C2B00068F99E /* needle2.png */; };
+		870D4A5D209306A600495F8E /* AWCollectionViewDialLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870D4A5C209306A600495F8E /* AWCollectionViewDialLayout.swift */; };
+		870D4A5F2093093000495F8E /* mainViewControllerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870D4A5E2093093000495F8E /* mainViewControllerCell.swift */; };
+		870D4A632094D1AB00495F8E /* selectChargeMoneyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870D4A622094D1AB00495F8E /* selectChargeMoneyViewController.swift */; };
+		870D4A652094DFFD00495F8E /* selectChargeMoneyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870D4A642094DFFD00495F8E /* selectChargeMoneyTableViewCell.swift */; };
 		87AE92B82091A9230077BD3D /* needle.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 87AE92B72091A9230077BD3D /* needle.jpg */; };
 		87E997C31FD7922000C6D287 /* roulette.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 87E997C21FD7922000C6D287 /* roulette.jpg */; };
 /* End PBXBuildFile section */
@@ -38,7 +42,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		4B0B61BA1FCCD25B0079A01D /* selectDrink.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = selectDrink.swift; sourceTree = "<group>"; };
+		4B0B61BA1FCCD25B0079A01D /* selectDrinkViewController.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = selectDrinkViewController.swift; sourceTree = "<group>"; };
 		4B0B61BC1FCFE0480079A01D /* roulette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = roulette.swift; sourceTree = "<group>"; };
 		4B21BCB11FC58659008FD19C /* coffee_management.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = coffee_management.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B21BCB41FC58659008FD19C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -53,6 +57,14 @@
 		4B55D3F81FD0B2600080EA8C /* Charts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Charts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BFD259B1FD6C2B00068F99E /* roulette2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = roulette2.png; sourceTree = "<group>"; };
 		4BFD259C1FD6C2B00068F99E /* needle2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = needle2.png; sourceTree = "<group>"; };
+		870D4A582093065800495F8E /* needle.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = needle.jpg; sourceTree = "<group>"; };
+		870D4A592093066700495F8E /* needle.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = needle.jpg; path = ../../../../../Downloads/needle.jpg; sourceTree = "<group>"; };
+		870D4A5A2093067000495F8E /* needle.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = needle.jpg; path = ../../../../../Downloads/needle.jpg; sourceTree = "<group>"; };
+		870D4A5B2093067200495F8E /* needle.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = needle.jpg; path = ../../../../../Downloads/needle.jpg; sourceTree = "<group>"; };
+		870D4A5C209306A600495F8E /* AWCollectionViewDialLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AWCollectionViewDialLayout.swift; sourceTree = "<group>"; };
+		870D4A5E2093093000495F8E /* mainViewControllerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainViewControllerCell.swift; sourceTree = "<group>"; };
+		870D4A622094D1AB00495F8E /* selectChargeMoneyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = selectChargeMoneyViewController.swift; sourceTree = "<group>"; };
+		870D4A642094DFFD00495F8E /* selectChargeMoneyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = selectChargeMoneyTableViewCell.swift; sourceTree = "<group>"; };
 		87AE92B72091A9230077BD3D /* needle.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = needle.jpg; path = ../../../../Downloads/needle.jpg; sourceTree = "<group>"; };
 		87E997C21FD7922000C6D287 /* roulette.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = roulette.jpg; sourceTree = "<group>"; };
 		B510BE3A7698B0CCFA7A1A82 /* Pods-coffee_management.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-coffee_management.release.xcconfig"; path = "Pods/Target Support Files/Pods-coffee_management/Pods-coffee_management.release.xcconfig"; sourceTree = "<group>"; };
@@ -94,15 +106,14 @@
 			isa = PBXGroup;
 			children = (
 				4B21BCB41FC58659008FD19C /* AppDelegate.swift */,
-				4B21BCB61FC58659008FD19C /* ViewController.swift */,
-				4B0B61BA1FCCD25B0079A01D /* selectDrink.swift */,
+				870D4A612093095100495F8E /* ViewController */,
+				870D4A602093093900495F8E /* Cell */,
+				4B21BCB81FC58659008FD19C /* Main.storyboard */,
 				4B0B61BC1FCFE0480079A01D /* roulette.swift */,
 				4B55D3EB1FD03AD50080EA8C /* PiewChart.swift */,
 				4B55D3ED1FD04F190080EA8C /* roulette2.swift */,
-				4B21BCB81FC58659008FD19C /* Main.storyboard */,
-				87E997C21FD7922000C6D287 /* roulette.jpg */,
-				4BFD259C1FD6C2B00068F99E /* needle2.png */,
-				4BFD259B1FD6C2B00068F99E /* roulette2.png */,
+				870D4A572093064B00495F8E /* images */,
+				870D4A562093063C00495F8E /* AWCollectionViewDialLayout */,
 				87AE92B72091A9230077BD3D /* needle.jpg */,
 				4B21BCBB1FC58659008FD19C /* Assets.xcassets */,
 				4B21BCBD1FC58659008FD19C /* LaunchScreen.storyboard */,
@@ -118,6 +129,47 @@
 				B510BE3A7698B0CCFA7A1A82 /* Pods-coffee_management.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		870D4A562093063C00495F8E /* AWCollectionViewDialLayout */ = {
+			isa = PBXGroup;
+			children = (
+				870D4A5C209306A600495F8E /* AWCollectionViewDialLayout.swift */,
+			);
+			path = AWCollectionViewDialLayout;
+			sourceTree = "<group>";
+		};
+		870D4A572093064B00495F8E /* images */ = {
+			isa = PBXGroup;
+			children = (
+				870D4A5A2093067000495F8E /* needle.jpg */,
+				87E997C21FD7922000C6D287 /* roulette.jpg */,
+				4BFD259C1FD6C2B00068F99E /* needle2.png */,
+				4BFD259B1FD6C2B00068F99E /* roulette2.png */,
+				870D4A5B2093067200495F8E /* needle.jpg */,
+				870D4A592093066700495F8E /* needle.jpg */,
+				870D4A582093065800495F8E /* needle.jpg */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
+		870D4A602093093900495F8E /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				870D4A5E2093093000495F8E /* mainViewControllerCell.swift */,
+				870D4A642094DFFD00495F8E /* selectChargeMoneyTableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		870D4A612093095100495F8E /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				4B21BCB61FC58659008FD19C /* ViewController.swift */,
+				870D4A622094D1AB00495F8E /* selectChargeMoneyViewController.swift */,
+				4B0B61BA1FCCD25B0079A01D /* selectDrinkViewController.swift */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 		CB738ACD8EC694CD28C37599 /* Frameworks */ = {
@@ -263,10 +315,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4B0B61BB1FCCD25B0079A01D /* selectDrink.swift in Sources */,
+				4B0B61BB1FCCD25B0079A01D /* selectDrinkViewController.swift in Sources */,
 				4B0B61BD1FCFE0480079A01D /* roulette.swift in Sources */,
+				870D4A652094DFFD00495F8E /* selectChargeMoneyTableViewCell.swift in Sources */,
 				4B21BCB71FC58659008FD19C /* ViewController.swift in Sources */,
+				870D4A5F2093093000495F8E /* mainViewControllerCell.swift in Sources */,
 				4B21BCB51FC58659008FD19C /* AppDelegate.swift in Sources */,
+				870D4A5D209306A600495F8E /* AWCollectionViewDialLayout.swift in Sources */,
+				870D4A632094D1AB00495F8E /* selectChargeMoneyViewController.swift in Sources */,
 				4B55D3EE1FD04F190080EA8C /* roulette2.swift in Sources */,
 				4B55D3EC1FD03AD50080EA8C /* PiewChart.swift in Sources */,
 			);
