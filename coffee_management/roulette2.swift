@@ -103,7 +103,7 @@ class roulette2: UIViewController {
         }
 
         self.ImageView2.transform = CGAffineTransform(rotationAngle: 0)
-        let goMain = storyboard!.instantiateViewController(withIdentifier: "main")
+//        let goMain = storyboard!.instantiateViewController(withIdentifier: "main")
 
             // 当たりアニメーションの秒数を設定(8秒)
             UIView.animate(withDuration: 7.0,animations: { () -> Void in
@@ -122,8 +122,9 @@ class roulette2: UIViewController {
 
                             DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
                                 // n秒後に実行したい処理
-                                self.present(goMain,animated: true, completion: nil)
-                            }
+//                                self.navigationController?.popViewController(animated: true)
+//                                self.present(goMain,animated: true, completion: nil)
+                                self.navigationController?.popToRootViewController(animated: true)                            }
             })
 
         }

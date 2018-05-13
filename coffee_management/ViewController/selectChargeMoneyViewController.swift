@@ -15,14 +15,10 @@ class selectChargeMoneyViewController: UIViewController{
     var userRowNum:Int = 0
     var possessionMoney: [Int] = []
     
-//    var possessionMoney = [String]()
-    //入金額の配列
-//    var possessionMoney = [Int](repeating: 0, count: 14)
-    
     @IBOutlet weak var TableView: UITableView!
 
-    
-    let moneyChoice:[Int] = [5,10,50,100,200,300,400,500,1000]
+//    let moneyChoice:[Int] = [5,10,50,100,200,300,400,500,1000]
+    let moneyChoice:[Int] = [200,300,400,500,1000,5,10,50,100]
     var Money:Int64 = 0//要変更
     var drinkNum:Int64 = 0//要変更
 
@@ -33,12 +29,9 @@ class selectChargeMoneyViewController: UIViewController{
         TableView.contentOffset.y = aTableCellsHeight
         possessionMoney = defaults.array(forKey: "possessionMoney") as! [Int]
         
+        //tableViewの罫線を表示させない
+        self.TableView.separatorColor = UIColor.clear
         
-        
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
     }
 }
 
@@ -51,6 +44,7 @@ extension selectChargeMoneyViewController: UITableViewDataSource, UITableViewDel
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // cellを選択できなくする
         tableView.allowsSelection = false
         return moneyChoice.count * 3
     }
@@ -66,9 +60,6 @@ extension selectChargeMoneyViewController: UITableViewDataSource, UITableViewDel
         moneyCell.delegate = self
         tableView.rowHeight = 200
         return moneyCell
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     }
 }
 

@@ -81,10 +81,10 @@ class roulette: UIViewController {
     @objc func hitDeterminator(sender: UIButton) {
         
         self.myImageView.transform = CGAffineTransform(rotationAngle: 0)
-        let goRoulette2 = storyboard!.instantiateViewController(withIdentifier: "roulette2")
+//        let goRoulette2 = storyboard!.instantiateViewController(withIdentifier: "toRoulette2")
         
         //当たりが出るかどうかの演算
-        let chooseResult = Int(arc4random_uniform(20))//0~49までの整数をランダムで生成
+        let chooseResult = Int(arc4random_uniform(2))//0~49までの整数をランダムで生成
         if chooseResult == 0 {
             //勝者が誰かの演算
             let chooseWiner = Int(arc4random_uniform(UInt32(self.delegate.users.count)))//user配列の何番目かが得られる
@@ -113,7 +113,9 @@ class roulette: UIViewController {
                 
                 DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
                     // n秒後に実行したい処理
-                    self.present(goRoulette2,animated: true, completion: nil)
+//                    self.present(goRoulette2,animated: true, completion: nil)
+                    
+                    self.performSegue(withIdentifier: "toRoulette2", sender: nil)
                 }
             })
 
@@ -121,7 +123,7 @@ class roulette: UIViewController {
             //ハズレ演出----------------------------------------------------------------------------------
             let routateNum = Int(arc4random_uniform(12))
             let angle:CGFloat = CGFloat(30*routateNum)
-            let goMain = storyboard!.instantiateViewController(withIdentifier: "main")
+//            let goMain = storyboard!.instantiateViewController(withIdentifier: "toMain")
             
             // アニメーションの秒数を設定(8秒)
             UIView.animate(withDuration: 7.0,animations: { () -> Void in
@@ -136,7 +138,8 @@ class roulette: UIViewController {
                             self.result.text = "nobody wins"
                             DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
                                 // n秒後に実行したい処理
-                            self.present(goMain,animated: true, completion: nil)
+//                            self.present(goMain,animated: true, completion: nil)
+                                self.navigationController?.popToRootViewController(animated: true)
                             }
                             
             })

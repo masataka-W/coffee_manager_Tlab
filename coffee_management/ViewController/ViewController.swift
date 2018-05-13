@@ -39,6 +39,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        DrinkButton.isEnabled = false
+        
         //ボタンを丸くする
         DrinkButton.layer.cornerRadius = 125
         ChargeButton.layer.cornerRadius = 125
@@ -80,6 +82,8 @@ class ViewController: UIViewController {
         self.delegate.users = name
     }
     override func viewWillAppear(_ animated: Bool) {
+        possessionMoney = defaults.array(forKey: "possessionMoney") as! [Int]
+        freeDrinkNumber = defaults.array(forKey: "freeDrinkNumber") as! [Int]
         self.collectionView.reloadData()
         print("データの更新")
         print(possessionMoney[userRowNum-1])
@@ -92,11 +96,8 @@ class ViewController: UIViewController {
 extension ViewController {
     @IBAction func DrinkButton(_ sender: UIButton) {
         self.delegate.user = userRowNum
+        
         // 遷移するViewを定義する.
-//        if  Money >= 20 || InitDrinkNum[userRowNum] != "0" {
-//            let sDrink = storyboard!.instantiateViewController(withIdentifier: "selectDrinkViewController")
-//            self.present(sDrink,animated: true, completion: nil)
-//        }
     }
     
     @IBAction func ChargeButton(_ sender: UIButton) {
@@ -118,8 +119,13 @@ extension ViewController {
         contentOffset = scrollView.contentOffset
         userRowNum = Int(contentOffset.y-700)/50 + 1
         if (userRowNum<=0){
-            userRowNum = userRowNum + 13
+            userRowNum = userRowNum + 14
         }
+        print(userRowNum)
+        
+//        if defaults.bool(forKey: "secondLaunch") {
+        drinkDiscrimination()
+//        }
     }
     
     //CollectionViewのレイアウトの設定
@@ -136,6 +142,18 @@ extension ViewController {
         dialLayout.xOffset = xOffset
         collectionView.reloadData();
     }
+    
+    // 入金額20円以上かLuckynumberが1以上ならドリンクボタンを押せるようになる
+    func drinkDiscrimination(){
+        possessionMoney = defaults.array(forKey: "possessionMoney") as! [Int]
+        freeDrinkNumber = defaults.array(forKey: "freeDrinkNumber") as! [Int]
+        if (possessionMoney[userRowNum-1] >= 20 || freeDrinkNumber[userRowNum-1] > 0) {
+            DrinkButton.isEnabled = true
+        } else{
+            DrinkButton.isEnabled = false
+        }
+    }
+    
 }
 
 /*
