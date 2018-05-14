@@ -15,28 +15,27 @@ class roulette2: UIViewController {
     let result = UILabel()
     private var ImageView: UIImageView!
     private var ImageView2: UIImageView!
+    // ルーレット開始ボタン
+    let lottery2 = UIButton(type: .custom)
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        // ナビゲーションコントローラの戻るボタンを隠す
+        self.navigationItem.hidesBackButton = true
+        lottery2.isEnabled = true
         // UIImageViewのサイズを設定する
         let iWidth: CGFloat = 500//ルーレット用
         let iHeight: CGFloat = 500//ルーレット用
-
         let jWidth: CGFloat = 260//針用
         let jHeight: CGFloat = 70//針用
-
         // UIImageViewのx,yを設定する
         let posX: CGFloat = (self.view.bounds.width - iWidth)/2//ルーレット
         let posY: CGFloat = 150//ルーレット
-
         let NposX: CGFloat = (self.view.bounds.width - jWidth)/2//針
         let NposY: CGFloat = 355//針
-
         // UIImageViewを作成.
         ImageView = UIImageView(frame: CGRect(x:posX, y:posY, width:iWidth, height:iHeight))//ルーレット
         ImageView2 = UIImageView(frame: CGRect(x:NposX, y:NposY, width:jWidth, height:jHeight))//針
-
         // UIImageを作成.
         let Roulette2: UIImage = UIImage(named: "roulette2.png")!
         let Needle2: UIImage = UIImage(named: "needle2.png")!
@@ -46,64 +45,48 @@ class roulette2: UIViewController {
         // UIImageViewをViewに追加する
         self.view.addSubview(ImageView)
         self.view.addSubview(ImageView2)
-
         //ルーレット開始ボタン
-        let lottery2 = UIButton(type: .custom)
         lottery2.frame = CGRect(x:300 ,y: 750,width: 150,height: 50)
         lottery2.setTitleColor(UIColor.white, for: .normal)
         lottery2.setTitle("Who wins?", for: .normal)
         lottery2.backgroundColor = UIColor.blue
         lottery2.addTarget(self, action: #selector(roulette2.hitDeterminator2(sender:)), for: .touchUpInside)
-
         view.addSubview(lottery2)
 
         //結果表示ラベル
-        //let result = UILabel()
         result.frame = CGRect(x:300,y: 100,width: 150,height: 50)
         //result.backgroundColor = UIColor.blue
         result.textColor = UIColor.black
         result.textAlignment = NSTextAlignment.center
         result.text = ""
-
         view.addSubview(result)
-        
 
     }
     
     @objc func hitDeterminator2(sender: UIButton) {
-        
+        lottery2.isEnabled = false
         //当たった人に対して個別に最後に回転する針の角度を決定する
         var angle:CGFloat = CGFloat(0)
+        angle = CGFloat((360 * self.delegate.win)/self.delegate.users.count)
+        print("当選者とその角度")
+        print(self.result.text ?? String(), angle)
         
-        switch self.delegate.win {
-            
-        case 0: angle = CGFloat(M_PI / 180 * Double(90))
-            
-        case 1: angle = CGFloat(M_PI / 180 * Double(126))
-            
-        case 2: angle = CGFloat(M_PI / 180 * Double(162))
-            
-        case 3: angle = CGFloat(M_PI / 180 * Double(198))
-            
-        case 4: angle = CGFloat(M_PI / 180 * Double(234))
-            
-        case 5: angle = CGFloat(M_PI / 180 * Double(270))
-            
-        case 6: angle = CGFloat(M_PI / 180 * Double(306))
-            
-        case 7: angle = CGFloat(M_PI / 180 * Double(342))
-            
-        case 8: angle = CGFloat(M_PI / 180 * Double(18))
-            
-        case 9: angle = CGFloat(M_PI / 180 * Double(54))
-            
-        default:
-            print("roulette2のswitch文でエラー")
-            
-        }
+//        switch self.delegate.win {
+//        case 0: angle = CGFloat(Double.pi / 180 * Double(90))
+//        case 1: angle = CGFloat(Double.pi / 180 * Double(126))
+//        case 2: angle = CGFloat(Double.pi / 180 * Double(162))
+//        case 3: angle = CGFloat(Double.pi / 180 * Double(198))
+//        case 4: angle = CGFloat(Double.pi / 180 * Double(234))
+//        case 5: angle = CGFloat(Double.pi / 180 * Double(270))
+//        case 6: angle = CGFloat(Double.pi / 180 * Double(306))
+//        case 7: angle = CGFloat(Double.pi / 180 * Double(342))
+//        case 8: angle = CGFloat(Double.pi / 180 * Double(18))
+//        case 9: angle = CGFloat(Double.pi / 180 * Double(54))
+//        default:
+//            print("roulette2のswitch文でエラー")
+//        }
 
         self.ImageView2.transform = CGAffineTransform(rotationAngle: 0)
-        let goMain = storyboard!.instantiateViewController(withIdentifier: "main")
 
             // 当たりアニメーションの秒数を設定(8秒)
             UIView.animate(withDuration: 7.0,animations: { () -> Void in
@@ -114,21 +97,14 @@ class roulette2: UIViewController {
                 
                 // 回転用のアフィン行列を生成.
                 self.ImageView2.transform = CGAffineTransform(rotationAngle: angle)
-            },
-
-                           completion: { (Bool) -> Void in
-                            //当たり表示
-                            self.result.text = self.delegate.users[self.delegate.win] + " wins"
-
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
-                                // n秒後に実行したい処理
-                                self.present(goMain,animated: true, completion: nil)
-                            }
+            },completion: { (Bool) -> Void in
+            //当たり表示
+                self.result.text = self.delegate.users[self.delegate.win] + " wins"
+                DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
+                self.navigationController?.popToRootViewController(animated: true)                            }
             })
 
         }
-    
-    
         override func didReceiveMemoryWarning() {
             super.didReceiveMemoryWarning()
     }

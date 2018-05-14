@@ -17,14 +17,22 @@ class roulette: UIViewController {
     let result = UILabel()
     private var myImageView: UIImageView!
     private var myImageView2: UIImageView!
-    var InitMoney: [String] = []
-    var InitDrinkNum: [String] = []
+    var InitMoney: [Int] = []
+    var InitDrinkNum: [Int] = []
+    var index:Int = 0
+    //ルーレット開始ボタン
+    let lottery = UIButton(type: .custom)
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        // ナビゲーションコントローラの戻るボタンを隠す
+        self.navigationItem.hidesBackButton = true
+    
+        index = self.delegate.user - 1
+        InitMoney = defaults.array(forKey: "possessionMoney") as! [Int]
+        InitDrinkNum = defaults.array(forKey: "freeDrinkNumber") as! [Int]
         
-        InitMoney = defaults.array(forKey: "DataMoney") as! [String]
-        InitDrinkNum = defaults.array(forKey: "DataDrinkNum") as! [String]
+        lottery.isEnabled = true
 
         // UIImageViewのサイズを設定する
         let iWidth: CGFloat = 400//ルーレット用
@@ -55,7 +63,7 @@ class roulette: UIViewController {
         self.view.addSubview(myImageView2)
         
         //ルーレット開始ボタン
-        let lottery = UIButton(type: .custom)
+        
         lottery.frame = CGRect(x:300 ,y: 750,width: 150,height: 50)
         lottery.setTitleColor(UIColor.white, for: .normal)
         lottery.setTitle("lottery", for: .normal)
@@ -73,14 +81,11 @@ class roulette: UIViewController {
         result.text = ""
         
         view.addSubview(result)
-        
         }
     
     @objc func hitDeterminator(sender: UIButton) {
-        
+        lottery.isEnabled = false
         self.myImageView.transform = CGAffineTransform(rotationAngle: 0)
-        let goRoulette2 = storyboard!.instantiateViewController(withIdentifier: "roulette2")
-        
         //当たりが出るかどうかの演算
         let chooseResult = Int(arc4random_uniform(20))//0~49までの整数をランダムで生成
         if chooseResult == 0 {
@@ -88,12 +93,12 @@ class roulette: UIViewController {
             let chooseWiner = Int(arc4random_uniform(UInt32(self.delegate.users.count)))//user配列の何番目かが得られる
             self.delegate.win = chooseWiner//勝った人の配列番号を受け渡す(roulette2で使う)
             //勝った人のフリードリンクを+1更新する
-            let lucky = Int64(InitDrinkNum[chooseWiner])! + 1
-            InitDrinkNum[chooseWiner] = lucky.description
-            defaults.set(InitDrinkNum, forKey: "DataDrinkNum")
+            let lucky = Int64(InitDrinkNum[chooseWiner]) + 1
+            InitDrinkNum[chooseWiner] = Int(lucky)
+            defaults.set(InitDrinkNum, forKey: "freeDrinkNumber")
             
             // radianで回転角度を指定
-            let angle:CGFloat = CGFloat(M_PI_2*1.9)
+            let angle:CGFloat = CGFloat(Double.pi/2*1.9)
             
             // 当たりアニメーションの秒数を設定(8秒)
             UIView.animate(withDuration: 7.0,animations: { () -> Void in
@@ -111,7 +116,9 @@ class roulette: UIViewController {
                 
                 DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
                     // n秒後に実行したい処理
-                    self.present(goRoulette2,animated: true, completion: nil)
+//                    self.present(goRoulette2,animated: true, completion: nil)
+                    
+                    self.performSegue(withIdentifier: "toRoulette2", sender: nil)
                 }
             })
 
@@ -119,7 +126,7 @@ class roulette: UIViewController {
             //ハズレ演出----------------------------------------------------------------------------------
             let routateNum = Int(arc4random_uniform(12))
             let angle:CGFloat = CGFloat(30*routateNum)
-            let goMain = storyboard!.instantiateViewController(withIdentifier: "main")
+//            let goMain = storyboard!.instantiateViewController(withIdentifier: "toMain")
             
             // アニメーションの秒数を設定(8秒)
             UIView.animate(withDuration: 7.0,animations: { () -> Void in
@@ -134,7 +141,8 @@ class roulette: UIViewController {
                             self.result.text = "nobody wins"
                             DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
                                 // n秒後に実行したい処理
-                            self.present(goMain,animated: true, completion: nil)
+//                            self.present(goMain,animated: true, completion: nil)
+                                self.navigationController?.popToRootViewController(animated: true)
                             }
                             
             })

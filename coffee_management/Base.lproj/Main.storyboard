@@ -18,89 +18,191 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="abp-fw-Zkd">
-                                <rect key="frame" x="699" y="155" width="49" height="85"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="SxN-Jm-lV2">
+                                <rect key="frame" x="0.0" y="64" width="768" height="960"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                <state key="normal" title="入金"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="J7X-Lf-GKp">
+                                    <size key="itemSize" width="641" height="121"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="SDj-9K-oSr" customClass="mainViewControllerCell" customModule="coffee_management" customModuleProvider="target">
+                                        <rect key="frame" x="63.5" y="0.0" width="641" height="121"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="641" height="121"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="money" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="to9-pb-swP">
+                                                    <rect key="frame" x="111" y="36" width="117" height="48"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="lucky" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c31-oy-Kts">
+                                                    <rect key="frame" x="242" y="36" width="90" height="48"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OCr-Uo-nT2">
+                                                    <rect key="frame" x="0.0" y="36" width="96" height="48"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </view>
+                                        <connections>
+                                            <outlet property="luckyLabel" destination="c31-oy-Kts" id="bQt-Pg-yxi"/>
+                                            <outlet property="moneyLabel" destination="to9-pb-swP" id="T8z-Q7-seB"/>
+                                            <outlet property="nameLable" destination="OCr-Uo-nT2" id="Vbm-If-QDi"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
                                 <connections>
-                                    <action selector="addMoney:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vyc-VR-fNM"/>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="HSI-FK-0KR"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="9ZV-0t-F4Z"/>
+                                </connections>
+                            </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o0q-LC-EAb">
+                                <rect key="frame" x="450" y="415" width="250" height="250"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.57810515169999999" blue="0.0" alpha="0.78084867294520544" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="70"/>
+                                <state key="normal" title="Charge">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="ChargeButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Kvq-25-KZt"/>
+                                    <segue destination="Ay5-LE-qxi" kind="show" id="UQU-Vh-HUQ"/>
                                 </connections>
                             </button>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qfq-Nn-9RG">
-                                <rect key="frame" x="377" y="361" width="293" height="235"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            </pickerView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oo3-Ul-egQ">
-                                <rect key="frame" x="699" y="436" width="49" height="85"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rmy-z5-Vuw">
+                                <rect key="frame" x="450" y="90" width="250" height="250"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="修正"/>
+                                <color key="backgroundColor" red="1" green="0.49327188729999999" blue="0.47399842739999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="70"/>
+                                <state key="normal" title="Drink">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
-                                    <action selector="modefyMoney:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NBh-yI-TOX"/>
+                                    <action selector="DrinkButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QC7-ks-AbH"/>
+                                    <segue destination="Y9a-sP-iP1" kind="show" identifier="selectDrink" id="JOV-18-Tyu"/>
                                 </connections>
                             </button>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ME1-Kh-Vof" userLabel="select Money">
-                                <rect key="frame" x="377" y="80" width="293" height="235"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            </pickerView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="入金額" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5CS-Hs-HhV">
-                                <rect key="frame" x="125" y="74" width="63" height="44"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g2h-KO-TuM">
+                                <rect key="frame" x="450" y="740" width="250" height="250"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Lucky +" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1jP-9b-Qk5">
-                                <rect key="frame" x="225" y="74" width="71" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="USERS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1g0-o5-SGX">
-                                <rect key="frame" x="20" y="74" width="63" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <color key="backgroundColor" red="0.83216959239999999" green="0.98548370600000001" blue="0.47333085539999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="70"/>
+                                <state key="normal" title="Data">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <toolbarItems>
-                        <barButtonItem title="Item" id="Zaz-dg-3hy"/>
-                    </toolbarItems>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" title="main" id="4tz-rb-o6J">
                         <barButtonItem key="rightBarButtonItem" id="HmZ-Q2-gQm"/>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="selectAddMoney" destination="ME1-Kh-Vof" id="i6Z-A7-pCq"/>
-                        <outlet property="selectModifyMoney" destination="qfq-Nn-9RG" id="6yU-sC-mnI"/>
+                        <outlet property="ChargeButton" destination="o0q-LC-EAb" id="x6E-Y7-4cC"/>
+                        <outlet property="DataButton" destination="g2h-KO-TuM" id="Y3O-Hs-Dbm"/>
+                        <outlet property="DrinkButton" destination="rmy-z5-Vuw" id="HH5-qW-oVC"/>
+                        <outlet property="collectionView" destination="SxN-Jm-lV2" id="TOi-ii-Ab9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="302.34375" y="133.0078125"/>
         </scene>
-        <!--Select Drink-->
+        <!--Choise Drik-->
         <scene sceneID="65A-As-rsb">
             <objects>
-                <viewController storyboardIdentifier="selectDrink" id="Y9a-sP-iP1" customClass="selectDrink" customModule="coffee_management" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="selectDrink" id="Y9a-sP-iP1" customClass="selectDrinkViewController" customModule="coffee_management" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pDP-V4-ATW">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="5BJ-3K-NIC"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Choise Drik" id="ee2-4E-058"/>
+                    <connections>
+                        <segue destination="bre-HX-4jq" kind="show" identifier="toRoulette" id="1uS-aq-2o8"/>
+                        <segue destination="Ay5-LE-qxi" kind="show" identifier="toCharge" id="TwW-tu-tP7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PQF-Zz-dbu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="960.15625" y="141.796875"/>
+            <point key="canvasLocation" x="995" y="142"/>
         </scene>
-        <!--Roulette-->
+        <!--Select Charge Money View Controller-->
+        <scene sceneID="9gN-Xq-PA4">
+            <objects>
+                <viewController id="Ay5-LE-qxi" customClass="selectChargeMoneyViewController" customModule="coffee_management" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Gzi-Jb-EoH">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="b1w-ZK-fX2">
+                                <rect key="frame" x="0.0" y="64" width="768" height="960"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="moneyCell" rowHeight="197" id="QHP-KY-XZt" customClass="selectChargeMoneyTableViewCell" customModule="coffee_management" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="768" height="197"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="QHP-KY-XZt" id="wfJ-v4-BHr">
+                                            <rect key="frame" x="0.0" y="0.0" width="768" height="196.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c8H-9Z-ZBB">
+                                                    <rect key="frame" x="323" y="34" width="121" height="127"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" red="1" green="0.57810515169999999" blue="0.0" alpha="0.64065175513698636" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                                    <state key="normal" title="1000">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="chargeMoneyButton:" destination="QHP-KY-XZt" eventType="touchUpInside" id="fqX-GL-eGP"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="chargeMoneyButton" destination="c8H-9Z-ZBB" id="vk5-qi-UVB"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Ay5-LE-qxi" id="ni6-iF-QIL"/>
+                                    <outlet property="delegate" destination="Ay5-LE-qxi" id="E58-Zv-DvA"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="fTX-MH-Qqq"/>
+                    </view>
+                    <connections>
+                        <outlet property="TableView" destination="b1w-ZK-fX2" id="hOf-7Y-gHb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="k7B-a0-3dH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="302" y="862"/>
+        </scene>
+        <!--Turn Roulette-->
         <scene sceneID="2R0-RA-A4f">
             <objects>
                 <viewController storyboardIdentifier="roulette" id="bre-HX-4jq" customClass="roulette" customModule="coffee_management" customModuleProvider="target" sceneMemberID="viewController">
@@ -110,12 +212,16 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="6gc-2c-cPd"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Turn Roulette" id="bFK-4a-tOi"/>
+                    <connections>
+                        <segue destination="5OR-sO-giD" kind="show" identifier="toRoulette2" id="VeI-1o-HE8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="on3-y5-HYA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1695" y="142"/>
+            <point key="canvasLocation" x="1691" y="142"/>
         </scene>
-        <!--Roulette2-->
+        <!--Who is selected?-->
         <scene sceneID="296-Wq-r1o">
             <objects>
                 <viewController storyboardIdentifier="roulette2" id="5OR-sO-giD" customClass="roulette2" customModule="coffee_management" sceneMemberID="viewController">
@@ -125,15 +231,16 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="SsY-kF-dvB"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Who is selected?" id="u16-tl-dRS"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BJH-jn-c0g" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2356.25" y="130.6640625"/>
+            <point key="canvasLocation" x="2427" y="142"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Zgv-oI-RTo">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bmc-67-icJ" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="home" automaticallyAdjustsScrollViewInsets="NO" id="bmc-67-icJ" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="wsS-FB-dtg">
                         <rect key="frame" x="0.0" y="20" width="768" height="44"/>
@@ -149,4 +256,7 @@
             <point key="canvasLocation" x="-366" y="133"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="TwW-tu-tP7"/>
+    </inferredMetricsTieBreakers>
 </document>
