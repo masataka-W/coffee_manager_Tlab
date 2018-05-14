@@ -20,13 +20,19 @@ class roulette: UIViewController {
     var InitMoney: [Int] = []
     var InitDrinkNum: [Int] = []
     var index:Int = 0
+    //ルーレット開始ボタン
+    let lottery = UIButton(type: .custom)
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        // ナビゲーションコントローラの戻るボタンを隠す
+        self.navigationItem.hidesBackButton = true
+    
         index = self.delegate.user - 1
         InitMoney = defaults.array(forKey: "possessionMoney") as! [Int]
         InitDrinkNum = defaults.array(forKey: "freeDrinkNumber") as! [Int]
+        
+        lottery.isEnabled = true
 
         // UIImageViewのサイズを設定する
         let iWidth: CGFloat = 400//ルーレット用
@@ -57,7 +63,7 @@ class roulette: UIViewController {
         self.view.addSubview(myImageView2)
         
         //ルーレット開始ボタン
-        let lottery = UIButton(type: .custom)
+        
         lottery.frame = CGRect(x:300 ,y: 750,width: 150,height: 50)
         lottery.setTitleColor(UIColor.white, for: .normal)
         lottery.setTitle("lottery", for: .normal)
@@ -75,16 +81,13 @@ class roulette: UIViewController {
         result.text = ""
         
         view.addSubview(result)
-        
         }
     
     @objc func hitDeterminator(sender: UIButton) {
-        
+        lottery.isEnabled = false
         self.myImageView.transform = CGAffineTransform(rotationAngle: 0)
-//        let goRoulette2 = storyboard!.instantiateViewController(withIdentifier: "toRoulette2")
-        
         //当たりが出るかどうかの演算
-        let chooseResult = Int(arc4random_uniform(2))//0~49までの整数をランダムで生成
+        let chooseResult = Int(arc4random_uniform(20))//0~49までの整数をランダムで生成
         if chooseResult == 0 {
             //勝者が誰かの演算
             let chooseWiner = Int(arc4random_uniform(UInt32(self.delegate.users.count)))//user配列の何番目かが得られる

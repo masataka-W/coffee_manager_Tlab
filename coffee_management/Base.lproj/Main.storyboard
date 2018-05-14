@@ -126,7 +126,7 @@
             </objects>
             <point key="canvasLocation" x="302.34375" y="133.0078125"/>
         </scene>
-        <!--Select Drink View Controller-->
+        <!--Choise Drik-->
         <scene sceneID="65A-As-rsb">
             <objects>
                 <viewController storyboardIdentifier="selectDrink" id="Y9a-sP-iP1" customClass="selectDrinkViewController" customModule="coffee_management" customModuleProvider="target" sceneMemberID="viewController">
@@ -136,6 +136,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="5BJ-3K-NIC"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Choise Drik" id="ee2-4E-058"/>
                     <connections>
                         <segue destination="bre-HX-4jq" kind="show" identifier="toRoulette" id="1uS-aq-2o8"/>
                         <segue destination="Ay5-LE-qxi" kind="show" identifier="toCharge" id="TwW-tu-tP7"/>
@@ -201,7 +202,7 @@
             </objects>
             <point key="canvasLocation" x="302" y="862"/>
         </scene>
-        <!--Roulette-->
+        <!--Turn Roulette-->
         <scene sceneID="2R0-RA-A4f">
             <objects>
                 <viewController storyboardIdentifier="roulette" id="bre-HX-4jq" customClass="roulette" customModule="coffee_management" customModuleProvider="target" sceneMemberID="viewController">
@@ -211,6 +212,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="6gc-2c-cPd"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Turn Roulette" id="bFK-4a-tOi"/>
                     <connections>
                         <segue destination="5OR-sO-giD" kind="show" identifier="toRoulette2" id="VeI-1o-HE8"/>
                     </connections>
@@ -219,7 +221,7 @@
             </objects>
             <point key="canvasLocation" x="1691" y="142"/>
         </scene>
-        <!--Roulette2-->
+        <!--Who is selected?-->
         <scene sceneID="296-Wq-r1o">
             <objects>
                 <viewController storyboardIdentifier="roulette2" id="5OR-sO-giD" customClass="roulette2" customModule="coffee_management" sceneMemberID="viewController">
@@ -229,6 +231,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="SsY-kF-dvB"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Who is selected?" id="u16-tl-dRS"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BJH-jn-c0g" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

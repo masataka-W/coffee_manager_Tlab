@@ -40,7 +40,7 @@ class selectDrinkViewController: UIViewController {
     }
     
     @objc func drinkCoffee(sender: UIButton) {
-        if(InitMoney[index] >= drinkPrice[sender.tag]){
+        if(InitMoney[index] >= drinkPrice[sender.tag] || InitDrinkNum[index] > 0){
             //飲んだコーヒーの種類に応じて合計入金額の値を変更するための料金の値を渡す
             let Money:Int64 = Int64(InitMoney[index]) - drinkPrice[sender.tag]
             InitMoney[index] = Int(Money)
